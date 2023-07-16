@@ -27,7 +27,6 @@
 			<th>이름</th>
 			<th>이메일</th>
 			<th>핸드폰번호</th>
-			<th>생년월일</th>
 			<th>정지여부</th>
 			<th>기능</th>
 			<th>시도횟수</th>
@@ -44,8 +43,6 @@
 					String uName = rs.getString("U_NAME");
 					String phone 
 						= rs.getString("PHONE") != null ? rs.getString("PHONE") : "-";
-					String birth 
-						= rs.getString("BIRTH")  != null ? rs.getString("BIRTH") : "-";
 					String email 
 						= rs.getString("EMAIL")  != null ? rs.getString("EMAIL") : "-";
 					String banYn 
@@ -63,7 +60,6 @@
 				<td><%=uName%></td>
 				<td><%=email%></td>
 				<td><%=phone%></td>
-				<td><%=birth%></td>
 				<td style="color:red"><%=banYn%></td>
 				<td><input type="button" value="<%=btnYn%>" onclick="banChange('<%=rs.getString("BANYN")%>', '<%=uId%>')"></td>	
 				<td><input type="<%=reset%>" value="초기화" onclick="cntReset('<%=uId%>')"></td>
@@ -93,7 +89,10 @@
 	function banChange(kind, uId){
 		if(kind == "N"){
 			kind = "Y";
-		} else {kind = "N"}
+		} else {
+			kind = "N";
+		}
+		console.log(kind);
 		window.open("admin_user_ban.jsp?uId="+uId,"&kind="+kind,"popup"
 				,"width=500, height=500");
 	}

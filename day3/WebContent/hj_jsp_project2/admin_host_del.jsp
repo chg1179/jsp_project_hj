@@ -28,7 +28,7 @@
             }
             
          } else {
-            out.println("해당 학생이 존재하지 않습니다.");
+            out.println("해당 호스트가 존재하지 않습니다.");
          }
       
       } catch (SQLException e){

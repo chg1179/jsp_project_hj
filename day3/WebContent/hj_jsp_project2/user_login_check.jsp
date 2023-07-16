@@ -8,7 +8,7 @@
 </head>
 <body>
 	<form name="check">
-<%@ include file="../jdbc_set2.jsp"%>	
+<%@ include file="../jdbc_set2.jsp" %>	
 	
 	<%	
 	request.setCharacterEncoding("UTF-8");

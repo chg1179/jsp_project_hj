@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,7 +8,7 @@
 <title>로그인</title>
 </head>
 <body>
-	<form action="user_login_check.jsp" name=loginForm>
+	<form action="user_login_check.jsp" name=loginForm method="post">
 		<h3>로그인</h3>
 		<div><input type="text" name="uId" placeholder="아이디"></div>
 		<div><input type="password" name="pwd" placeholder="비밀번호"></div>

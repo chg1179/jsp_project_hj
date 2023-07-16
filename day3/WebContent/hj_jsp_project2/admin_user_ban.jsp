@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-   <%@ include file="../../jdbc_set2.jsp" %>
+   <%@ include file="../jdbc_set2.jsp" %>
 <%
       request.setCharacterEncoding("UTF-8");
       String uId = request.getParameter("uId");
@@ -24,9 +24,7 @@
             out.println("해제되었습니다.");
          }
          
-         
       } catch (SQLException ex) {
-         out.println("테이블 삽입이 실패했습니다.<br>");
          out.println("SQLException: " + ex.getMessage());
       } 
    %>

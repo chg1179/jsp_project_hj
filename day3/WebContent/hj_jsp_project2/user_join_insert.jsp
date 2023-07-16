@@ -8,7 +8,7 @@
 </head>
 <body>
 <form action="main.jsp">
-	<%@ include file="../jdbc_set2.jsp"%>	
+	<%@ include file="../jdbc_set2.jsp" %>	
 	
 	<%	
 		request.setCharacterEncoding("UTF-8");
@@ -16,7 +16,6 @@
 		String pwd1 = request.getParameter("pwd1");
 		String uName = request.getParameter("uName");
 		String email = request.getParameter("email");
-		String birth = request.getParameter("birth");
 		String phone = request.getParameter("phone");
 		
 		Statement stmt = null;
@@ -24,7 +23,7 @@
 		
 		try{
 			stmt = conn.createStatement();
-			String insert = "INSERT INTO HJ_TBL_USER(U_ID, PWD, U_NAME, EMAIL,BIRTH, PHONE) VALUES('" + uId + "','" + pwd1 + "', '" + uName + "', '" + email + "', '" + birth + "','" + phone + "')";
+			String insert = "INSERT INTO HJ_TBL_USER(U_ID, PWD, U_NAME, EMAIL, PHONE) VALUES('" + uId + "','" + pwd1 + "', '" + uName + "', '" + email + "','" + phone + "')";
 			System.out.println(insert);
 			stmt.executeUpdate(insert);
 			out.println(uName + "님 가입을 축하합니다!!");

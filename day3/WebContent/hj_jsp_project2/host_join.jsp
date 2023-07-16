@@ -16,12 +16,10 @@
 		<h3>호스트 회원가입</h3>
 		<div><input type="text" name="hId" placeholder="아이디"><input type="button" value="아이디 중복 체크" onclick="idCheck()"></div>
 		<div><input type="password" name="pwd1" placeholder="비밀번호"></div>
-				<div><input type="password" name="pwd2" placeholder="비밀번호 확인"></div>
+		<div><input type="password" name="pwd2" placeholder="비밀번호 확인"></div>
 		<div><input type="text" name="hName" placeholder="이름"></div>
-		<div><input type="text" name="birth" placeholder="생년월일"></div>
-		<div><input type="text" name="hNo" placeholder="사업자번호"></div>
+		<div><input type="text" name="email" placeholder="[선택]이메일"></div>
 		<div><input type="text" name="phone" placeholder="휴대전화번호"></div>
-		<div><input type="text" name="companyAddr" placeholder="숙소주소"></div>
 		<div><input type="button" onclick="hostJoin()" value="회원가입" ></div>
 	</div>
 	</form>
@@ -80,7 +78,7 @@
 			form.hId.focus();
 			return;
 		} else { 
-			window.open("host_join_idCheck.jsp?uId=" + form.hId.value, "idcheck", "width=500, height=500");
+			window.open("host_join_idCheck.jsp?hId=" + form.hId.value, "idcheck", "width=500, height=500");
 		}
 	}
 	function getReturn(val){

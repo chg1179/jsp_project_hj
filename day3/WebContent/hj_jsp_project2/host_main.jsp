@@ -15,15 +15,15 @@
 		
 	%>
 	<input type="button" value="로그아웃" onclick="logout()">
-	<input type="button" value="메인화면으로" onclick="goMain()">
-
+	
 </body>
 </html>
 <script>
 	function logout(){
 		location.href="host_login.jsp";
 	}
-	function goMain(){
-		location.href="main.jsp";
+	function accm(){
+		location.href="host_accm.jsp";
 	}
+
 </script>

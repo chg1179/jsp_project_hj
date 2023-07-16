@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-   <%@ include file="../../jdbc_set2.jsp" %>
+   <%@ include file="../jdbc_set2.jsp" %>
 <%
       request.setCharacterEncoding("UTF-8");
       String hId = request.getParameter("HId");

@@ -24,14 +24,14 @@
 					String hName = rs.getString("H_NAME");
 					String phone
 						= rs.getString("PHONE") != null ? rs.getString("PHONE") : "";
-					String birth
-						= rs.getString("BIRTH") != null ? rs.getString("BIRTH") : "";
+					String email
+						= rs.getString("EMAIL") != null ? rs.getString("EMAIL") : "";
 		%>
 				<input name="hId" value="<%= hId %>" hidden>
 				<div>비밀번호 : <input name="pwd" type="password"></div>
 				<div>이　　름 : <input type="text" value="<%=hName%>" name="hName"></div>
 				<div>핸 드 폰  : <input type="text" value="<%=phone%>" name="phone"></div>
-				<div>생년월일 : <input type="text" value="<%=birth%>" name="birth"></div>
+				<div>이메일 : <input type="text" value="<%=email%>" name="email"></div>
 		<%
 				}
 			} catch (SQLException e) {

@@ -1,72 +1,99 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>로그인</title>
+<title>메인</title>
 <style>
-	html{
+	body {
 		margin: 0;
-	    padding: 0px;
-	    border: 0;
-	    box-sizing: border-box;
+		padding: 0;
 	}
 	
-	section h1{
-		
+	header {
+		background-color: #003580;
+		box-sizing: border-box;
+		line-height: 50px;
 	}
 	
-	header{
-		position: fixed;
-	    top: 0px;
-	    left: 0;
-	    right: 0;
-	    height: 72px;
-	    transition: 0.4s;
+	.title {
+		text-align: center;
+		margin-top: 0px;
 	}
 	
-	.head{
-		float: right;
+	.title h1 {
+		position: relative;
+		margin: 0;
 	}
 	
-	li{
-		list-style: none;
+	h1 a {
+		text-decoration: none;
+		color: #F6F6F6;
+		margin-left: 20px;
+	}
+	
+	ul {
+		margin: 0;
+		text-align: right;
+	}
+	
+	ul li {
 		display: inline-block;
 	}
 	
+	li a {
+		text-decoration: none;
+		color: white;
+		font-size: 15px;
+		font-weight: bolder;
+		padding: 10px;
+	}
 </style>
 </head>
 <body>
-<div>
+	<%
+	    String uId = (String) session.getAttribute("userId");
+	    String loginText = (uId == null || uId.isEmpty()) ? "로그인" : "로그아웃";
+	    String loginLink = (uId == null || uId.isEmpty()) ? "user_login.jsp" : "logout.jsp";
+	    String checkLogin = (uId == null || uId.isEmpty()) ? "user_login.jsp" : "user_reserv.jsp";
+	    String checkReserv = (uId == null || uId.isEmpty()) ? "user_login.jsp" : "user_reserv_check.jsp";
+	    // 특정 세션 속성 확인
+	  /*  if (uId == null || uId.isEmpty()) {
+	        out.println("세션이 종료되었습니다.");
+	    } else {
+	        out.println("세션 유지 중입니다. 사용자 ID: " + uId);
+	    }  */
+	%>
 	<header>
-		<section>
-			<div>
-				<a href="main.jsp" title="Hosting">Hosting</a>
-			</div>
-			<ul class="head">
-				<li>
-					<a href="user_booking.jsp">숙소 예약</a>
-				</li>
-				<li>
-					<a href="">예약 내역 확인</a>
-				</li>
-				<li>
-					<a href="user_login.jsp">회원 로그인</a>
-				</li>
-				<li>
-					<a href="host_login.jsp">호스트 로그인</a>
-				</li>
-			</ul>
-			
-			<!-- <div>메인</div>
-			<div>게스트 로그인, 호스트 로그인 링크 넣기</div>
-			<div>사용자 메인화면 링크 (숙소 예약, 숙소 예약 정보 확인 페이지)</div>
-			<div>호스트 메인화면 링크 (예약자 확인)</div> 
-			헤더, 메인, 푸터 만들고 user_main, host_main에 include
-			-->
-
+		<div class="title">
+			<h1>
+				<a href="main.jsp" title="Hosting">HOSTEL</a>
+			</h1>
+		</div>
+		<ul>
+			<li><a href="<%= checkLogin %>" onclick="return checkLogin()">숙소 예약</a></li>
+			<li><a href="<%= checkReserv %>" onclick="return checkReserv()">예약내역 확인</a></li>
+			<li><a href="<%= loginLink %>"><%= loginText %></a></li>
+		</ul>
 	</header>
-</div>
+
 </body>
 </html>
+<script>
+	function checkLogin() {
+	    var uId = "<%= uId %>";
+	    if (uId == null || uId == "") {
+	        alert("로그인 먼저 해주세요.");
+	        return false; // 링크 이벤트를 취소합니다.
+	    }
+	}
+	function checkReserv(){
+		var uId = "<%= uId %>";
+	    if (uId == null || uId == "") {
+	        alert("로그인 먼저 해주세요.");
+	        return false; // 링크 이벤트를 취소합니다.
+	    }
+	}
+</script>
+

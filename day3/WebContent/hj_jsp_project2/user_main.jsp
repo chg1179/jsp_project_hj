@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<form name="loginForm">
+<form name="loginForm" action="logout.jsp" method="post">
 	<%
 		String uId = (String) session.getAttribute("userId");
 		String uName = (String) session.getAttribute("userName");
@@ -22,8 +22,7 @@
 	%>
 	<div>
 		<input type="button" value="로그아웃" onclick="logout()">
-		<input type="button" value="마이페이지" onclick="myPage()">
-		<input type="button" value="호스트 모드로 전환" onclick="hostMode()">
+		<input type="button" value="메인페이지" onclick="main()">
 	</div>
 </form>
 </body>
@@ -32,12 +31,10 @@
 	function logout(){
 		var form = document.loginForm;
 		form.submit();
-		location.href="user_login.jsp"
+		location.href="logout.jsp"
 	}
-	function myPage(){
-		location.href="user_mypage.jsp";
+	function main(){
+		location.href="main.jsp";
 	}
-	function hostMode(){
-		location.href="host_main.jsp";
-	}
+
 </script>

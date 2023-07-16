@@ -25,8 +25,8 @@
 			<th></th>
 			<th>아이디</th>
 			<th>이름</th>
+			<th>이메일</th>
 			<th>핸드폰번호</th>
-			<th>생년월일</th>
 			<th>정지여부</th>
 			<th>기능</th>
 			<th>시도횟수</th>
@@ -43,8 +43,8 @@
 					String hName = rs.getString("H_NAME");
 					String phone 
 						= rs.getString("PHONE") != null ? rs.getString("PHONE") : "-";
-					String birth 
-						= rs.getString("BIRTH")  != null ? rs.getString("BIRTH") : "-";
+					String email 
+						= rs.getString("EMAIL")  != null ? rs.getString("EMAIL") : "-";
 					String banYn 
 						= rs.getString("BANYN").equals("Y") ? "정지" : "";
 					String btnYn 
@@ -58,8 +58,8 @@
 				</td>
 				<td><%=hId%></td>
 				<td><%=hName%></td>
+				<td><%=email%></td>
 				<td><%=phone%></td>
-				<td><%=birth%></td>
 				<td style="color:red"><%=banYn%></td>
 				<td><input type="button" value="<%=btnYn%>" onclick="banChange('<%=rs.getString("BANYN")%>', '<%=hId%>')"></td>	
 				<td><input type="<%=reset%>" value="초기화" onclick="cntReset('<%=hId%>')"></td>

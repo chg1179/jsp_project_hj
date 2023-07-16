@@ -15,7 +15,7 @@
 			String pwd = request.getParameter("pwd");
 			String hName = request.getParameter("hName");
 			String phone = request.getParameter("phone");
-			String birth = request.getParameter("birth");
+			String email = request.getParameter("email");
 			
 			
 			Statement stmt = null; // 쿼리 호출을 위한 객체
@@ -24,9 +24,9 @@
 			try {
 				String sql = "";
 				if(pwd.equals("") || pwd == null){
-					sql = "UPDATE HJ_TBL_HOST SET H_NAME = '"+hName+"', PHONE = '"+phone+"', BIRTH = '"+birth+"' WHERE H_ID = '"+hId+"'";
+					sql = "UPDATE HJ_TBL_HOST SET H_NAME = '"+hName+"', PHONE = '"+phone+"',EMAIL = '"+email+"' WHERE H_ID = '"+hId+"'";
 				} else {
-					sql = "UPDATE HJ_TBL_HOST SET H_NAME = '"+hName+"', PHONE = '"+phone+"', BIRTH = '"+birth+"', PWD = '"+pwd+"' WHERE H_ID = '"+hId+"'";
+					sql = "UPDATE HJ_TBL_HOST SET H_NAME = '"+hName+"', PHONE = '"+phone+"', EMAIL = '"+email+"' , PWD = '"+pwd+"' WHERE H_ID = '"+hId+"'";
 				}
 				stmt = conn.createStatement();
 				stmt.executeUpdate(sql);

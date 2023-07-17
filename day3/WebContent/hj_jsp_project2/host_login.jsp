@@ -7,6 +7,7 @@
 <title>호스트 로그인</title>
 </head>
 <body>
+<%@ include file="main2.jsp" %>
 	<form action="host_login_check.jsp" name=loginForm>
 		<h3>호스트 로그인</h3>
 		<div><input type="text" name="hId" placeholder="아이디"></div>

@@ -11,6 +11,7 @@
 </style>
 </head>
 <body>
+<%@ include file="main2.jsp" %>
 	<form action="user_join_insert.jsp"  name="userForm"  method="post">
 	<div id="container">
 		<h3>고객 회원가입</h3>

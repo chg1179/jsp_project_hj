@@ -8,6 +8,7 @@
 <title>로그인</title>
 </head>
 <body>
+<%@ include file="main2.jsp" %>
 	<form action="user_login_check.jsp" name=loginForm method="post">
 		<h3>로그인</h3>
 		<div><input type="text" name="uId" placeholder="아이디"></div>

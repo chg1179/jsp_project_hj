@@ -5,17 +5,22 @@
 <head>
 <meta charset="UTF-8">
 <title>숙소 예약</title>
+<style>
+</style>
 </head>
 <body>
+	<%@ include file="main2.jsp" %>
 	<%
-		String uId = (String) session.getAttribute("userId");
+		String userId = (String) session.getAttribute("userId");
 	%>
+	
 	<form action="user_reserv_insert.jsp" name="bookingForm" method="post">
+		
 		<%@ include file="../jdbc_set2.jsp"%>
 		<div id="container">
 			<h3>숙소 예약</h3>
 			<div>
-				<input type="hidden" name="uId" value="<%= uId %>"> 
+				<input type="hidden" name="uId" value="<%= userId %>"> 
 				<select name="room">
 					<option disabled selected>선택</option>
 				<%
@@ -74,7 +79,6 @@
 		var form = document.bookingForm;
 		var room = form.room.value;
 		var userId = form.uId.value;
-		console.log(userId);
 		
 		if(form.checkIn.value == "" || form.checkIn.value == undefined){
 			alert("체크인 날짜를 선택해주세요.");

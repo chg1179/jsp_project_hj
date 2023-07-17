@@ -18,13 +18,14 @@ th, td {
 </style>
 </head>
 <body>
+<%@ include file="main2.jsp" %>
 <%@ include file="../jdbc_set2.jsp"%>
 <form name="list" action="user_reserv_cancel.jsp">
 	<h3>예약조회</h3>
 		<%
 		request.setCharacterEncoding("UTF-8");
 		
-		String uId = (String) session.getAttribute("userId");
+		String userId = (String) session.getAttribute("userId");
 	    String uName = (String) session.getAttribute("userName");
 	    out.println(uName + "님의 예약정보");
 	    
@@ -47,7 +48,7 @@ th, td {
 
 			<%
 			try {
-				String sql = "SELECT * FROM HJ_TBL_ACCM A INNER JOIN HJ_TBL_RESERV R ON A.A_NAME = R.A_NAME WHERE R.U_ID='"+ uId +"'";
+				String sql = "SELECT * FROM HJ_TBL_ACCM A INNER JOIN HJ_TBL_RESERV R ON A.A_NAME = R.A_NAME WHERE R.U_ID='"+ userId +"'";
 				stmt = conn.createStatement();
 				rs = stmt.executeQuery(sql);
 				while(rs.next()) {
@@ -62,7 +63,7 @@ th, td {
 			<tr>
 				<td><input type="radio" name="user" value="<%=rNo%>"></td>
 				<td>R<%=rNo%></td>
-				<td><%=uId%></td>
+				<td><%=userId%></td>
 				<td><%=aName%></td>
 				<td><%=aAddr%></td>
 				<td><%=payment%></td>

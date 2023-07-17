@@ -16,18 +16,23 @@
       Statement stmt = null;
       
       try{
-         stmt = conn.createStatement();
-         String select = "SELECT * FROM HJ_TBL_ACCM A INNER JOIN HJ_TBL_RESERV R ON A.A_NAME = R.A_NAME WHERE R.R_NO='"+ rNo +"'";
-         stmt.executeQuery(select);
-         String delete = "DELETE FROM HJ_TBL_RESERV WHERE R_NO = '" + rNo + "'";
-         stmt.executeUpdate(delete);
-         out.println("예약 취소되었습니다.");
-            
+         stmt = conn.createStatement();   
+         String select = "SELECT * FROM HJ_TBL_RESERV R INNER JOIN HJ_TBL_USER U ON R.U_ID = U.U_ID WHERE R_NO = '" + rNo + "'";
+         rs = stmt.executeQuery(select);
+         
+         if(rs.next()){
+        	 String delete = "DELETE FROM HJ_TBL_RESERV WHERE R_NO = '" + rNo + "'";
+             stmt.executeUpdate(delete);
+             out.println("예약 취소되었습니다.");
+         }
+         
       } catch (SQLException e){
          out.println(e.getMessage());
       }
+      System.out.println(rNo);
    %>
    <input type="button" onclick="back()" value="되돌아가기">
+  
 </body>
 
 </html>

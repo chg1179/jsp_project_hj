@@ -10,9 +10,9 @@
 		margin: 0;
 		padding: 0;
 	}
-
+	
 	header {
-		position: fixed;
+		position: relative;
 		top: 0;
 		left: 0;
 		width: 100%;
@@ -20,32 +20,32 @@
 		box-sizing: border-box;
 		line-height: 70px;
 	}
-
+	
 	.title {
 		text-align: center;
 		margin-top: 0px;
 	}
-
+	
 	.title h1 {
 		position: relative;
 		margin: 0;
 	}
-
+	
 	h1 a {
 		text-decoration: none;
 		color: #F6F6F6;
 	}
-
+	
 	ul {
 		margin: 0;
 		padding: 0;
 		text-align: center;
 	}
-
+	
 	ul li {
 		display: inline-block;
 	}
-
+	
 	li a {
 		text-decoration: none;
 		color: white;
@@ -53,22 +53,7 @@
 		font-weight: bolder;
 		padding: 10px;
 	}
-
-	.item-bg {
-		width: 100%;
-		height: 937px;
-		background-image: url(to-travel-1677347_1920.jpg);
-		background-position: center;
-	}
-
-	.item-overlay {
-		position: fixed;
-		top: 140px;
-		left: 0;
-		width: 100%;
-		height: 107%;
-		background-color: rgba(0, 0, 0, 0.5);
-	}
+	
 </style>
 </head>
 <body>
@@ -78,6 +63,12 @@
 	    String loginLink = (uId == null || uId.isEmpty()) ? "user_login.jsp" : "logout.jsp";
 	    String checkLogin = (uId == null || uId.isEmpty()) ? "user_login.jsp" : "user_reserv.jsp";
 	    String checkReserv = (uId == null || uId.isEmpty()) ? "user_login.jsp" : "user_reserv_check.jsp";
+	    // 특정 세션 속성 확인
+	  /*  if (uId == null || uId.isEmpty()) {
+	        out.println("세션이 종료되었습니다.");
+	    } else {
+	        out.println("세션 유지 중입니다. 사용자 ID: " + uId);
+	    }  */
 	%>
 	<header>
 		<div class="title">
@@ -91,27 +82,22 @@
 			<li><a href="<%= loginLink %>"><%= loginText %></a></li>
 		</ul>
 	</header>
-	<div class="item">
-		<div class="item-bg">
-			<div class="item-overlay"></div>
-		</div>
-	</div>
 </body>
 </html>
 <script>
 	function checkLogin() {
-		var uId = "<%= uId %>";
-		if (uId == null || uId == "") {
-			alert("로그인 먼저 해주세요.");
-			return false;
-		}
+	    var uId = "<%= uId %>";
+	    if (uId == null || uId == "") {
+	        alert("로그인 먼저 해주세요.");
+	        return false; // 링크 이벤트를 취소합니다.
+	    }
 	}
-
-	function checkReserv() {
+	function checkReserv(){
 		var uId = "<%= uId %>";
-		if (uId == null || uId == "") {
-			alert("로그인 먼저 해주세요.");
-			return false;
-		}
+	    if (uId == null || uId == "") {
+	        alert("로그인 먼저 해주세요.");
+	        return false; // 링크 이벤트를 취소합니다.
+	    }
 	}
 </script>
+

@@ -7,6 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
+<%@ include file="main.jsp" %>
 	<div>마이페이지</div>
 </body>
 </html>

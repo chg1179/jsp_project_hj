@@ -11,10 +11,10 @@
 <form name="updateForm">
 		<%
 			request.setCharacterEncoding("UTF-8");
-			String uId = request.getParameter("uId");
+			String rNo = request.getParameter("rNo");
 			String pwd = request.getParameter("pwd");
+			String uName = request.getParameter("uName");
 			String aName = request.getParameter("aName");
-			String aAddr = request.getParameter("aAddr");
 			String checkIn = request.getParameter("checkIn");
 			String checkOut = request.getParameter("checkOut");
 			
@@ -24,9 +24,9 @@
 			try {
 				String sql = "";
 				if(pwd.equals("") || pwd == null){
-					sql = "UPDATE HJ_TBL_RESERV SET U_ID = '"+uId+"', A_NAME = '"+aName+"', A_ADDR = '"+aAddr+"' , CHECKIN = '"+checkIn+"' , CHECKOUT = '"+checkOut+"' WHERE U_ID = '"+uId+"'";
+					sql = "UPDATE HJ_TBL_USER U RIGHT JOIN HJ_TBL_RESERV R ON (U.U_ID = R.U_ID) SET U.U_NAME = '"+ uName +"', R.CHECKIN= '" + checkIn + "', R.CHECKOUT='" + checkOut + "' WHERE R.R_NO = '" + rNo + "'";
 				} else {
-					sql = "UPDATE HJ_TBL_RESERV SET U_ID = '"+uId+"', A_NAME = '"+aName+"', A_ADDR = '"+aAddr+"' , CHECKIN = '"+checkIn+"' , CHECKOUT = '"+checkOut+"' PWD = '"+pwd+"' WHERE U_ID = '"+uId+"'";
+					sql = "UPDATE HJ_TBL_USER U RIGHT JOIN HJ_TBL_RESERV R ON (U.U_ID = R.U_ID) SET U.U_NAME = '"+ uName +"', R.CHECKIN= '" + checkIn + "', R.CHECKOUT='" + checkOut + "', 	U.PWD= '" + pwd + "' WHERE R.R_NO = '" + rNo + "'";
 				}
 				stmt = conn.createStatement();
 				stmt.executeUpdate(sql);

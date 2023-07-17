@@ -5,12 +5,11 @@
 <head>
 <meta charset="UTF-8">
 <title>호스트 회원가입</title>
-<style>
-	
 
-</style>
 </head>
 <body>
+<%@ include file="main2.jsp" %>
+
 	<form action="host_join_insert.jsp"  name="hostForm"  method="post">
 	<div id="container">
 		<h3>호스트 회원가입</h3>

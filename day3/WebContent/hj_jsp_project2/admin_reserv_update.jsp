@@ -8,10 +8,10 @@
 </head>
 <body>
 <%@ include file="../jdbc_set2.jsp"%>
-<form name="updateForm" action="admin_reserv_update_sql.jsp">
+<form name="updateForm" action="admin_reserv_update_sql.jsp" method="post">
 		<%
 			request.setCharacterEncoding("UTF-8");
-			String uId = request.getParameter("uId");
+			String rNo = request.getParameter("rNo");
 			
 			Statement stmt = null; // 쿼리 호출을 위한 객체
 			ResultSet rs = null; // 결과를 담기 위한 객체
@@ -19,8 +19,7 @@
 			try {
 				stmt = conn.createStatement();
 				// JOIN 필요함.@@@@@!!!!!!!! USER 테이블이랑 RESERV 테이블 
-				// USER JOIN RESERV 해야할듯 아니면 반대로도 해보셈 
-				String select = "SELECT * FROM HJ_TBL_USER WHERE U_ID= '" + uId + "'";
+				String select = "SELECT * FROM HJ_TBL_RESERV R INNER JOIN HJ_TBL_USER U ON R.U_ID = U.U_ID WHERE R_NO = '" + rNo + "'";
 				rs = stmt.executeQuery(select);
 				
 				if (rs.next()) {
@@ -28,7 +27,7 @@
 					String checkIn = rs.getString("CHECKIN");
 					String checkOut = rs.getString("CHECKOUT");
 		%>
-				<input name="uId" value="<%= uId %>" hidden>
+				<input name="rNo" value="<%= rNo %>" hidden>
 				<div>비밀번호 : <input name="pwd" type="password"></div>
 				<div>이　　름 : <input type="text" value="<%=uName%>" name="uName"></div>
 				<div>예약 날짜 변경</div>
@@ -40,13 +39,7 @@
 				out.println(e.getMessage());
 			}
 		%>
-		<div><input type="button" value="수정" onclick="userUpdate()"></div>
+		<div><input type="submit" value="수정"></div>
 </form>
 </body>
 </html>
-<script>
-	function userUpdate(){
-		var form = document.updateForm;
-		form.submit();
-	}
-</script>

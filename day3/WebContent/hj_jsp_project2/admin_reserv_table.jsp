@@ -17,6 +17,7 @@
 </style>
 </head>
 <body>
+<%@ include file="admin_main.jsp" %>
 <%@ include file="../jdbc_set2.jsp" %>
 <form name="list">
 <h1>예약 정보</h1>
@@ -51,7 +52,7 @@
 		%>
 			<tr>
 				<td>
-					<input type="radio" name="user" value="<%=uId%>">
+					<input type="radio" name="rNo" value="<%=rNo%>">
 				</td>
 				<td>R<%=rNo%></td>
 				<td><%=uId%></td>
@@ -81,12 +82,14 @@
 			return;
 		}
 		var form = document.list;
-		location.href = "admin_reserv_del.jsp?uId=" + form.user.value;
+		var rNo = form.rNo.value;
+		location.href = "admin_reserv_del.jsp?rNo=" + rNo;
 	}
 	
 	function reservUpdate(){
-		var uId = document.list.user.value;
-		window.open("admin_reserv_update.jsp?uId="+ uId, "update","width=500, height=500");
+		var form = document.list;
+		var rNo = form.rNo.value;
+		window.open("admin_reserv_update.jsp?rNo="+ rNo, "update","width=500, height=500");
 	}
 	function getReturn(){
 		location.reload();

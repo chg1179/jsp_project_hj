@@ -7,6 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
+<%@ include file="main2.jsp" %>
 	<%
 		String hId = (String) session.getAttribute("hostId");
 		String hName = (String) session.getAttribute("hostName");
@@ -15,6 +16,8 @@
 		
 	%>
 	<input type="button" value="로그아웃" onclick="logout()">
+	<input type="button" value="메인페이지" onclick="hostMain()">
+	<
 	
 </body>
 </html>
@@ -22,8 +25,8 @@
 	function logout(){
 		location.href="host_login.jsp";
 	}
-	function accm(){
-		location.href="host_accm.jsp";
+	function hostMain(){
+		location.href="host_main.jsp";
 	}
 
 </script>

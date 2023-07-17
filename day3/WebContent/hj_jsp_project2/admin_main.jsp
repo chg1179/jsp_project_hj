@@ -71,6 +71,7 @@
 				<li><a href="admin_user_table.jsp">고객 정보</a></li>
 				<li><a href="admin_reserv_table.jsp">고객 예약 정보</a></li>
 				<li><a href="admin_host_table.jsp">호스트 정보</a></li>
+				<li><a href="logout.jsp">로그아웃</a></li>
 			</ul>
 		</header>
 	</div>

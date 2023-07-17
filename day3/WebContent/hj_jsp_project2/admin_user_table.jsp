@@ -17,6 +17,7 @@
 </style>
 </head>
 <body>
+<%@ include file="admin_main.jsp" %>
 <%@ include file="../jdbc_set2.jsp" %>
 <form name="list">
 <h1>게스트 정보</h1>

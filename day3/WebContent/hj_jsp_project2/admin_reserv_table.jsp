@@ -53,7 +53,7 @@
 				<td>
 					<input type="radio" name="user" value="<%=uId%>">
 				</td>
-				<td><%=rNo%></td>
+				<td>R<%=rNo%></td>
 				<td><%=uId%></td>
 				<td><%=aName%></td>
 				<td><%=aAddr%></td>

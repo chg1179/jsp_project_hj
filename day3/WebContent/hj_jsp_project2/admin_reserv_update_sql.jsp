@@ -13,10 +13,10 @@
 			request.setCharacterEncoding("UTF-8");
 			String uId = request.getParameter("uId");
 			String pwd = request.getParameter("pwd");
-			String uName = request.getParameter("uName");
-			String phone = request.getParameter("phone");
-			String email = request.getParameter("email");
-			
+			String aName = request.getParameter("aName");
+			String aAddr = request.getParameter("aAddr");
+			String checkIn = request.getParameter("checkIn");
+			String checkOut = request.getParameter("checkOut");
 			
 			Statement stmt = null; // 쿼리 호출을 위한 객체
 			ResultSet rs = null; // 결과를 담기 위한 객체
@@ -24,9 +24,9 @@
 			try {
 				String sql = "";
 				if(pwd.equals("") || pwd == null){
-					sql = "UPDATE HJ_TBL_USER SET U_NAME = '"+uName+"', PHONE = '"+phone+"', EMAIL = '"+email+"' WHERE U_ID = '"+uId+"'";
+					sql = "UPDATE HJ_TBL_RESERV SET U_ID = '"+uId+"', A_NAME = '"+aName+"', A_ADDR = '"+aAddr+"' , CHECKIN = '"+checkIn+"' , CHECKOUT = '"+checkOut+"' WHERE U_ID = '"+uId+"'";
 				} else {
-					sql = "UPDATE HJ_TBL_USER SET U_NAME = '"+uName+"', PHONE = '"+phone+"', EMAIL = '"+email+"', PWD = '"+pwd+"' WHERE U_ID = '"+uId+"'";
+					sql = "UPDATE HJ_TBL_RESERV SET U_ID = '"+uId+"', A_NAME = '"+aName+"', A_ADDR = '"+aAddr+"' , CHECKIN = '"+checkIn+"' , CHECKOUT = '"+checkOut+"' PWD = '"+pwd+"' WHERE U_ID = '"+uId+"'";
 				}
 				stmt = conn.createStatement();
 				stmt.executeUpdate(sql);

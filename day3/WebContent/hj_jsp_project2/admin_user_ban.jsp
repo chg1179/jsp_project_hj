@@ -26,6 +26,7 @@
          
       } catch (SQLException ex) {
          out.println("SQLException: " + ex.getMessage());
+         System.out.println(kind);
       } 
    %>
    <input type="button" onclick="back()" value="되돌아가기">

@@ -14,7 +14,7 @@
 	header {
 		background-color: #003580;
 		box-sizing: border-box;
-		line-height: 50px;
+		line-height: 65px;
 	}
 	
 	.title {

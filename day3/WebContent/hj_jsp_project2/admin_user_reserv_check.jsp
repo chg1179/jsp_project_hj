@@ -21,7 +21,7 @@
 <form name="list">
 	<h3>예약자 조회</h3>
 	<div>회원 아이디 <input type="text" name="uId"></div>
-	<input type="button" onclick="check()" value="조회"/>
+	<input type="submit" onclick="check()" value="조회"/>
 	
 	<%
 		request.setCharacterEncoding("UTF-8");
@@ -43,5 +43,7 @@
 </body>
 </html>
 <script>
-
+	function check(){
+		location.href="admin_user_reserv_table";
+	}
 </script>

@@ -8,30 +8,32 @@
 </head>
 <body>
 <%@ include file="../jdbc_set2.jsp"%>
-<form name="updateForm" action="admin_user_update_sql.jsp">
+<form name="updateForm" action="admin_reserv_update_sql.jsp">
 		<%
 			request.setCharacterEncoding("UTF-8");
 			String uId = request.getParameter("uId");
 			
 			Statement stmt = null; // 쿼리 호출을 위한 객체
 			ResultSet rs = null; // 결과를 담기 위한 객체
+			
 			try {
 				stmt = conn.createStatement();
-				String select = "SELECT * FROM HJ_TBL_USER  WHERE U_ID= '" + uId + "'";
+				// JOIN 필요함.@@@@@!!!!!!!! USER 테이블이랑 RESERV 테이블 
+				// USER JOIN RESERV 해야할듯 아니면 반대로도 해보셈 
+				String select = "SELECT * FROM HJ_TBL_USER WHERE U_ID= '" + uId + "'";
 				rs = stmt.executeQuery(select);
 				
 				if (rs.next()) {
 					String uName = rs.getString("U_NAME");
-					String phone
-						= rs.getString("PHONE") != null ? rs.getString("PHONE") : "";
-					String email
-						= rs.getString("EMAIL") != null ? rs.getString("EMAIL") : "";
+					String checkIn = rs.getString("CHECKIN");
+					String checkOut = rs.getString("CHECKOUT");
 		%>
 				<input name="uId" value="<%= uId %>" hidden>
 				<div>비밀번호 : <input name="pwd" type="password"></div>
 				<div>이　　름 : <input type="text" value="<%=uName%>" name="uName"></div>
-				<div>이 메 일 : <input type="text" value="<%=email%>" name="email"></div>
-				<div>핸 드 폰  : <input type="text" value="<%=phone%>" name="phone"></div>
+				<div>예약 날짜 변경</div>
+				<div>체크인: <input type="date" value="<%=checkIn%>" name=checkIn></div>
+				<div>체크아웃 : <input type="date" value="<%=checkOut%>" name="checkOut"></div>
 		<%
 				}
 			} catch (SQLException e) {

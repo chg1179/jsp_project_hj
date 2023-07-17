@@ -15,30 +15,31 @@
 		<div id="container">
 			<h3>숙소 예약</h3>
 			<div>
-				<input type="hidden" name="uId" value="<%= uId %>"> <select
-					name="room">
+				<input type="hidden" name="uId" value="<%= uId %>"> 
+				<select name="room">
 					<option disabled selected>선택</option>
-					<%
-				request.setCharacterEncoding("UTF-8");
-				ResultSet rs = null;
-				Statement stmt = null;
-				try {
-					stmt = conn.createStatement();
-					String sql = "SELECT A_NAME FROM HJ_TBL_ACCM GROUP BY A_NAME ORDER BY A_NAME";
-					rs = stmt.executeQuery(sql);
-					while(rs.next()){
-						String aName = rs.getString("A_NAME");
+				<%
+					request.setCharacterEncoding("UTF-8");
+					ResultSet rs = null;
+					Statement stmt = null;
+					try {
+						stmt = conn.createStatement();
+						String sql = "SELECT A_NAME FROM HJ_TBL_ACCM GROUP BY A_NAME ORDER BY A_NAME";
+						rs = stmt.executeQuery(sql);
+						while(rs.next()){
+							String aName = rs.getString("A_NAME");
 				%>
-					<option value="<%= aName %>"><%=aName%></option>
-					<%
-					}
+					<option value="<%=aName%>"><%=aName%></option>
+				<%
+						}
 					
-				} catch (SQLException e){
-					out.println(e.getMessage());
-				}
+					} catch (SQLException e){
+						out.println(e.getMessage());
+					}
 				%>
 				</select>
 			</div>
+			
 			<div>
 				결제방식 <select name="payment">
 					<option disabled selected>선택</option>

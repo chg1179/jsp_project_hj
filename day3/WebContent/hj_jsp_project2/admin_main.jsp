@@ -12,9 +12,13 @@
 	}
 	
 	header {
+		position: relative;
+		top: 0;
+		left: 0;
+		width: 100%;
 		background-color: #003580;
 		box-sizing: border-box;
-		line-height: 65px;
+		line-height: 70px;
 	}
 	
 	.title {
@@ -30,11 +34,11 @@
 	h1 a {
 		text-decoration: none;
 		color: #F6F6F6;
-		margin-left: 20px;
 	}
 	
 	ul {
 		margin: 0;
+		padding: 0;
 		text-align: center;
 	}
 	
@@ -47,7 +51,18 @@
 		color: white;
 		font-size: 15px;
 		padding: 10px;
+		transition: background-color 0.3s;
+		border-radius: 5px;
 	}
+	
+    ul li a:hover {
+        background-color: #005AAD; /* 마우스를 가져다 댔을 때의 색상 */
+    }
+    ul li a:active {
+        background-color: #003580; /* 선택했을 때의 색상 */
+    }
+	
+	
 </style>
 </head>
 <body>

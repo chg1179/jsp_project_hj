@@ -1,15 +1,17 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>로그인</title>
+<link rel="stylesheet" href="login.css">
 </head>
 <body>
+
 <%@ include file="main2.jsp" %>
-	<form action="user_login_check.jsp" name=loginForm method="post">
+<form action="user_login_check.jsp" name=loginForm method="post">
+	<div id="container">
 		<h3>로그인</h3>
 		<div><input type="text" name="uId" placeholder="아이디"></div>
 		<div><input type="password" name="pwd" placeholder="비밀번호"></div>
@@ -19,7 +21,8 @@
 		</div>
 		<div><input type="button" value="로그인" onclick="userLogin()"><input type="button" value="회원가입" onclick="userJoin()"></div>
 		<a href="host_login.jsp">호스트 권한으로 로그인하기</a>
-	</form>
+	</div>
+</form>
 </body>
 </html>
 <script>

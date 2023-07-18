@@ -10,3 +10,7 @@
 	<div>아이디, 비밀번호 찾기</div>
 </body>
 </html>
+<script>
+	alert("비밀번호가 틀렸습니다.");
+	location.href="user_login.jsp";
+</script>

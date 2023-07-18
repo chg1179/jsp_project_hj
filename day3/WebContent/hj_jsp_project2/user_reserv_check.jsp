@@ -5,6 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" href="table.css">
 <style>
 table {
 	border-collapse: collapse;
@@ -21,6 +22,7 @@ th, td {
 <%@ include file="main2.jsp" %>
 <%@ include file="../jdbc_set2.jsp"%>
 <form name="list" action="user_reserv_cancel.jsp">
+<div id="container">
 	<h3>예약조회</h3>
 		<%
 		request.setCharacterEncoding("UTF-8");
@@ -81,7 +83,9 @@ th, td {
 		</table>
 		<input type="button" value="예약 취소 하기" onclick ="cancel()">
 		<input type="button" value="메인페이지" onclick="goMain()">
-	</form>
+	
+</div>
+</form>
 </body>
 </html>
 <script>

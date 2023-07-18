@@ -1,0 +1,52 @@
+@charset "UTF-8";
+
+    body {
+        font-family: Arial, sans-serif;
+    }
+    #container {
+        width: 880px;
+        margin: 40px auto;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background-color: #f9f9f9;
+    }
+    #container h3 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    #container div {
+        margin-bottom: 10px;
+    }
+    #container input[type="text"],
+    #container input[type="password"],
+    #container input[type="email"],
+    #container input[type="button"] {
+        width: 100%;
+        padding: 10px;
+        box-sizing: border-box;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 14px;
+    }
+
+    #container input[type="button"] {
+		margin-top: 10px;
+        height: 40px;
+        background-color: #fff;
+        color: black;
+        cursor: pointer;
+    }
+
+    /* 표 가운데 정렬 스타일 */
+    table {
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    /* 버튼 가로 크기 텍스트에 맞게 조절 */
+    #container input[type="button"] {
+        width: auto;
+        padding: 10px 20px;
+    }
+

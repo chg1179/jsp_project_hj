@@ -5,6 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>숙소 예약</title>
+<link rel="stylesheet" href="login.css">
 <style>
 </style>
 </head>
@@ -20,6 +21,7 @@
 		<div id="container">
 			<h3>숙소 예약</h3>
 			<div>
+				숙소
 				<input type="hidden" name="uId" value="<%= userId %>"> 
 				<select name="room">
 					<option disabled selected>선택</option>
@@ -64,7 +66,7 @@
 			</div>
 			<div>예약날짜</div>
 			<div>
-				<input type="date" name="checkIn">~<input type="date"
+				<input type="date" name="checkIn"> ~ <input type="date"
 					name="checkOut">
 			</div>
 			<div>

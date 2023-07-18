@@ -28,7 +28,6 @@
 	    	if(rs.next()){
 	    		String update="UPDATE HJ_TBL_USER SET U_ID = '" + uId + "', PWD = '" + pwd + "', U_NAME = '"+uName+"', PHONE = '"+phone+"', EMAIL = '"+email+"' WHERE U_ID = '"+uId+"'";
 		    	stmt.executeUpdate(update);
-		    	out.println(update);
 	    	}
 	    	
 	    }  catch (SQLException e){
@@ -40,6 +39,6 @@
 </body> 
 </html>
 <script>
-	/* alert("수정되었습니다."); */
-	/* location.href="user_myPage_table.jsp"; */
+	alert("수정되었습니다.");
+	location.href="user_myPage_table.jsp";
 </script>

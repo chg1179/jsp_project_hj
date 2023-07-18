@@ -5,10 +5,10 @@
 <head>
 <meta charset="UTF-8">
 <title>호스트 회원가입</title>
-
+<link rel="stylesheet" href="login.css">
 </head>
 <body>
-
+<%@ include file="host_menu.jsp" %>
 	<form action="host_join_insert.jsp"  name="hostForm"  method="post">
 	<div id="container">
 		<h3>호스트 회원가입</h3>

@@ -5,16 +5,19 @@
 <head>
 <meta charset="UTF-8">
 <title>호스트 로그인</title>
+<link rel="stylesheet" href="login.css">
 </head>
 <body>
 <%@ include file="host_menu.jsp" %>
-	<form action="host_login_check.jsp" name=loginForm>
+<form action="host_login_check.jsp" name=loginForm>
+	<div id="container">
 		<h3>호스트 로그인</h3>
 		<div><input type="text" name="hId" placeholder="아이디"></div>
 		<div><input type="password" name="pwd" placeholder="비밀번호"></div>
 		<div><input type="button" value="로그인" onclick="hostLogin()"></div>
 		<div><input type="button" value="회원가입" onclick="hostJoin()"></div>
-	</form>
+	</div>
+</form>
 </body>
 </html>
 <script>

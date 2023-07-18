@@ -5,14 +5,11 @@
 <head>
 <meta charset="UTF-8">
 <title>고객 회원가입</title>
-<style>
-	
-
-</style>
+<link rel="stylesheet" href="login.css">
 </head>
 <body>
 <%@ include file="main2.jsp" %>
-	<form action="user_join_insert.jsp"  name="userForm"  method="post">
+<form action="user_join_insert.jsp"  name="userForm"  method="post">
 	<div id="container">
 		<h3>고객 회원가입</h3>
 		<div><input type="text" name="uId" placeholder="아이디"><input type="button" value="아이디 중복 체크" onclick="idCheck()"></div>
@@ -23,8 +20,7 @@
 		<div><input type="text" name="phone" placeholder="휴대전화번호"></div>
 		<div><input type="button" onclick="userJoin()" value="회원가입" ></div>
 	</div>
-	</form>
-	
+</form>
 </body>
 </html>
 <script>

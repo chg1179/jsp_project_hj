@@ -5,12 +5,12 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" href="table.css">
 <style>
 table {
 	border-collapse: collapse;
 	text-align: center;
 }
-
 th, td {
 	border: 1px solid black;
 	padding: 5px 10px;
@@ -18,14 +18,14 @@ th, td {
 </style>
 </head>
 <body>
+<%@ include file="main2.jsp" %>
 <%@ include file="../jdbc_set2.jsp"%>
 <form name="myInfo" action="user_mypage_update.jsp">
-	<div>
-		<h1>마이페이지</h1>
+	<div id="container">
 		<%
 		request.setCharacterEncoding("UTF-8");
 	    String uName = (String) session.getAttribute("userName");
-	    String uId = (String) session.getAttribute("userId");
+	    String userId = (String) session.getAttribute("userId");
 	    
 	    ResultSet rs = null;
 	    Statement stmt = null;
@@ -45,17 +45,17 @@ th, td {
 			try{
 				stmt = conn.createStatement();
 				
-				String sql = "SELECT * FROM HJ_TBL_USER WHERE U_ID = '" + uId + "'";
+				String sql = "SELECT * FROM HJ_TBL_USER WHERE U_ID = '" + userId + "'";
 				rs = stmt.executeQuery(sql);
 				if(rs.next()){
-					String userId = rs.getString("U_ID");
+					String useId = rs.getString("U_ID");
 					String pwd = rs.getString("PWD");
 					String userName = rs.getString("U_NAME");
 					String email = rs.getString("EMAIL");
 					String phone = rs.getString("PHONE");
 			%>
 			<tr>
-				<td><input type="text" name="userId" value="<%= userId %>"></td>
+				<td><input type="text" name="userId" value="<%= useId %>"></td>
 				<td><input type="text" name="pwd" value="<%= pwd %>"></td>
 				<td><input type="text" name="userName" value="<%= userName %>"></td>
 				<td><input type="email" name="email" value="<%= email %>"></td>
@@ -79,7 +79,7 @@ th, td {
 <script>
 	function infoUpdate(){
 		var form = document.myInfo;
-		var uId= form.userId.value;
+		var uId= form.useId.value;
 		var pwd= form.pwd.value;
 		var uName = form.userName.value;
 		var email = form.email.value;

@@ -10,9 +10,9 @@
 		margin: 0;
 		padding: 0;
 	}
-
+	
 	header {
-		position: fixed;
+		position: relative;
 		top: 0;
 		left: 0;
 		width: 100%;
@@ -20,39 +20,48 @@
 		box-sizing: border-box;
 		line-height: 70px;
 	}
-
+	
 	.title {
 		text-align: center;
 		margin-top: 0px;
 	}
-
+	
 	.title h1 {
 		position: relative;
 		margin: 0;
 	}
-
+	
 	h1 a {
 		text-decoration: none;
 		color: #F6F6F6;
 	}
-
+	
 	ul {
 		margin: 0;
 		padding: 0;
 		text-align: center;
 	}
-
+	
 	ul li {
 		display: inline-block;
 	}
-
+	
 	li a {
 		text-decoration: none;
 		color: white;
 		font-size: 15px;
 		padding: 10px;
+		transition: background-color 0.3s;
+		border-radius: 5px;
 	}
-
+	
+    ul li a:hover {
+        background-color: #005AAD; /* 마우스를 가져다 댔을 때의 색상 */
+    }
+    ul li a:active {
+        background-color: #003580; /* 선택했을 때의 색상 */
+    }
+	
 	.item-bg {
 		width: 100%;
 		height: 937px;
@@ -86,9 +95,9 @@
 			</h1>
 		</div>
 		<ul>
-			<li><a href="<%= checkLogin %>" onclick="return checkLogin()">숙소 예약</a></li>
-			<li><a href="<%= checkReserv %>" onclick="return checkLogin()">예약내역 확인</a></li>
-			<li><a href="<%= mypage %>" onclick="return checkLogin()">마이페이지</a></li>
+			<li><a href="<%= checkLogin %>" onclick="return checkLogin(<%= uId %>)">숙소 예약</a></li>
+			<li><a href="<%= checkReserv %>" onclick="return checkReserv(<%= uId %>)">예약내역 확인</a></li>
+			<li><a href="<%= mypage %>" onclick="return checkLogin(<%= uId %>)">마이페이지</a></li>
 			<li><a href="<%= loginLink %>"><%= loginText %></a></li>
 		</ul>
 	</header>
@@ -100,19 +109,19 @@
 </body>
 </html>
 <script>
-	function checkLogin() {
-		var uId = "<%= uId %>";
-		if (uId == null || uId == "") {
+	function checkLogin(uId) {
+		if (uId == null || uId === "") {
 			alert("로그인 먼저 해주세요.");
-			return false;
+			return false; // 기본 동작 중단 (링크 이동 방지)
 		}
+		return true; // 기본 동작 실행 (링크 이동 허용)
 	}
 
-	function checkReserv() {
-		var uId = "<%= uId %>";
-		if (uId == null || uId == "") {
+	function checkReserv(uId) {
+		if (uId == null || uId === "") {
 			alert("로그인 먼저 해주세요.");
-			return false;
+			return false; // 기본 동작 중단 (링크 이동 방지)
 		}
+		return true; // 기본 동작 실행 (링크 이동 허용)
 	}
 </script>

@@ -51,7 +51,17 @@
 		color: white;
 		font-size: 15px;
 		padding: 10px;
+		transition: background-color 0.3s;
+		border-radius: 5px;
 	}
+	
+    ul li a:hover {
+        background-color: #005AAD; /* 마우스를 가져다 댔을 때의 색상 */
+    }
+    ul li a:active {
+        background-color: #003580; /* 선택했을 때의 색상 */
+    }
+	
 	
 </style>
 </head>
@@ -71,28 +81,33 @@
 			</h1>
 		</div>
 		<ul>
-			<li><a href="<%= checkLogin %>" onclick="return checkLogin()">숙소 예약</a></li>
-			<li><a href="<%= checkReserv %>" onclick="return checkReserv()">예약내역 확인</a></li>
-			<li><a href="<%= mypage %>" onclick="return checkLogin()">마이페이지</a></li>
+			<li><a href="<%= checkLogin %>" onclick="return checkLogin(<%= uId %>)">숙소 예약</a></li>
+			<li><a href="<%= checkReserv %>" onclick="return checkReserv(<%= uId %>)">예약내역 확인</a></li>
+			<li><a href="<%= mypage %>" onclick="return checkLogin(<%= uId %>)">마이페이지</a></li>
 			<li><a href="<%= loginLink %>"><%= loginText %></a></li>
 		</ul>
 	</header>
+	<div class="item">
+		<div class="item-bg">
+			<div class="item-overlay"></div>
+		</div>
+	</div>
 </body>
 </html>
 <script>
-	function checkLogin() {
-	    var uId = "<%= uId %>";
-	    if (uId == null || uId == "") {
-	        alert("로그인 먼저 해주세요.");
-	        return false; // 링크 이벤트를 취소합니다.
-	    }
+	function checkLogin(uId) {
+		if (uId == null || uId === "") {
+			alert("로그인 먼저 해주세요.");
+			return false; // 기본 동작 중단 (링크 이동 방지)
+		}
+		return true; // 기본 동작 실행 (링크 이동 허용)
 	}
-	function checkReserv(){
-		var uId = "<%= uId %>";
-	    if (uId == null || uId == "") {
-	        alert("로그인 먼저 해주세요.");
-	        return false; // 링크 이벤트를 취소합니다.
-	    }
+
+	function checkReserv(uId) {
+		if (uId == null || uId === "") {
+			alert("로그인 먼저 해주세요.");
+			return false; // 기본 동작 중단 (링크 이동 방지)
+		}
+		return true; // 기본 동작 실행 (링크 이동 허용)
 	}
 </script>
-

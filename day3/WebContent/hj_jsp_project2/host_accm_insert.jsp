@@ -5,6 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+
 </head>
 <body>
 <body>
@@ -18,11 +19,12 @@
 		String aPerson = request.getParameter("aPerson");
 		
 		String select = "SELECT * FROM HJ_TBL_ACCM WHERE H_ID = '"+hId+"'";
-		String update = "INSERT INTO HJ_TBL_ACCM(A_NAME, A_ADDR, A_PERSON) VALUSE ('"+aName+"' , '"+aAddr+"', '"+aPerson+"')";
+		String update = "INSERT INTO HJ_TBL_ACCM(H_ID, A_NAME, A_ADDR, A_PERSON) VALUES('"+hId+"' ,'"+aName+"' , '"+aAddr+"', '"+aPerson+"')";
 		try{
-			stmt.executeQuery(select);
+			stmt=conn.createStatement();
+			rs=stmt.executeQuery(select);
 			stmt.executeUpdate(update);
-			out.println("테이블 삽입이 완료되었습니다.");
+			out.println("숙소 등록이 완료되었습니다.");
 			
 		} catch (SQLException e){
 			out.println(e.getMessage());
@@ -30,3 +32,6 @@
 	%>
 </body>
 </html>
+<script>
+	alert("");
+</script>

@@ -5,6 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" href="table.css">
 <style>
 	table{
 		border-collapse: collapse;
@@ -20,6 +21,7 @@
 <%@ include file="admin_main.jsp" %>
 <%@ include file="../jdbc_set2.jsp" %>
 <form name="list">
+<div id="container">
 <h3>호스트 정보</h3>
 	<table>
 		<tr>
@@ -84,11 +86,7 @@
 	</table>
 	<input type="button" onclick="hostUpdate()" value="수정"/>
 	<input type="button" onclick="hostRemove()" value="삭제"/>
-</form>
-
-
-
-
+</div>
 </form>
 </body>
 </html>

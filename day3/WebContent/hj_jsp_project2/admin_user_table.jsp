@@ -5,6 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" href="table.css">
 <style>
 	table{
 		border-collapse: collapse;
@@ -20,6 +21,7 @@
 <%@ include file="admin_main.jsp" %>
 <%@ include file="../jdbc_set2.jsp" %>
 <form name="list">
+<div id="container">
 <h1>내정보 수정</h1>
 	<table>
 		<tr>
@@ -78,7 +80,9 @@
 	<input type="button" onclick="userUpdate()" value="수정"/>
 	<input type="button" onclick="userRemove()" value="삭제"/>
 	<input type="button" onclick="goMain()" value="메인페이지"/>
+</div>
 </form>
+
 </body>
 </html>
 <script>

@@ -10,7 +10,7 @@
    <%@ include file="../jdbc_set2.jsp" %>
 <%
       request.setCharacterEncoding("UTF-8");
-      String hId = request.getParameter("HId");
+      String hId = request.getParameter("hId");
       String kind = request.getParameter("kind");
       Statement stmt = null;
 

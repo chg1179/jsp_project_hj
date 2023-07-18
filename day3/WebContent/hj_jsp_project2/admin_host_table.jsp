@@ -20,7 +20,7 @@
 <%@ include file="admin_main.jsp" %>
 <%@ include file="../jdbc_set2.jsp" %>
 <form name="list">
-<h1>호스트 정보</h1>
+<h3>호스트 정보</h3>
 	<table>
 		<tr>
 			<th></th>
@@ -36,6 +36,8 @@
 			ResultSet rs = null;
 			Statement stmt = null;
 			try {
+				// @@@@@@ 호스트, 숙소 조인해서 숙소정보도 받아오기 (키값은 h_id)
+				// @@@@ 호스트별 숙소 정보 host accm 테이블 조인 
 				String sql = "SELECT * FROM HJ_TBL_HOST WHERE STATUS = 'U' ORDER BY H_ID ASC";
 				stmt = conn.createStatement();
 				rs = stmt.executeQuery(sql);
@@ -50,8 +52,7 @@
 						= rs.getString("BANYN").equals("Y") ? "정지" : "";
 					String btnYn 
 						= rs.getString("BANYN").equals("Y") ? "해제" : "정지";
-					String reset 
-						= rs.getInt("CNT") >=5 ? "button" : "hidden";
+					
 		%>
 			<tr>
 				<td>
@@ -63,7 +64,15 @@
 				<td><%=phone%></td>
 				<td style="color:red"><%=banYn%></td>
 				<td><input type="button" value="<%=btnYn%>" onclick="banChange('<%=rs.getString("BANYN")%>', '<%=hId%>')"></td>	
-				<td><input type="<%=reset%>" value="초기화" onclick="cntReset('<%=hId%>')"></td>
+				<td>
+				<% if(rs.getInt("CNT") >= 5){ %>	
+					<input type="button" value="초기화" onclick="cntChange('<%=hId%>')">
+				<% } else {
+					
+				}
+				
+				%>
+				</td> 
 			</tr>
 		<%
 				}
@@ -76,6 +85,11 @@
 	<input type="button" onclick="hostUpdate()" value="수정"/>
 	<input type="button" onclick="hostRemove()" value="삭제"/>
 </form>
+
+
+
+
+</form>
 </body>
 </html>
 <script>
@@ -87,18 +101,20 @@
 		location.href = "admin_host_del.jsp?hId=" + form.user.value;
 	}
 	
-	function banChange(kind, uId){
+	function banChange(kind, hId){
 		if(kind == "N"){
 			kind = "Y";
-		} else {kind = "N"}
-		window.open("admin_host_ban.jsp?hId="+hId,"&kind="+kind,"popup"
+		} else {
+			kind = "N"
+		}
+		window.open("admin_host_ban.jsp?hId="+hId+"&kind="+kind,"popup"
 				,"width=500, height=500");
 	}
 	//로그인 시도 횟수
-	function cntReset(uId){
+	function cntChange(hId){
 		window.open("admin_host_cnt.jsp?hId="+hId, "popup","width=500, height=500");
 		
-	}// 유저 정보 수정(관리자)
+	}// 호스트 정보 수정(관리자)
 	function hostUpdate(){
 		var hId = document.list.user.value;
 		window.open("admin_host_update.jsp?hId="+hId, "update","width=500, height=500");

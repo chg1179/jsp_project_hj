@@ -8,7 +8,6 @@
 
 </head>
 <body>
-<%@ include file="main2.jsp" %>
 
 	<form action="host_join_insert.jsp"  name="hostForm"  method="post">
 	<div id="container">

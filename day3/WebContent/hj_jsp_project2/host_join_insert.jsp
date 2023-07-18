@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<form action="user_login.jsp">
+<form action="host_login.jsp">
 	<%@ include file="../jdbc_set2.jsp"%>	
 	
 	<%	

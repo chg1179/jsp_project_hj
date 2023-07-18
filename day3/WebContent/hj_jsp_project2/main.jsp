@@ -50,7 +50,6 @@
 		text-decoration: none;
 		color: white;
 		font-size: 15px;
-		font-weight: bolder;
 		padding: 10px;
 	}
 
@@ -78,6 +77,7 @@
 	    String loginLink = (uId == null || uId.isEmpty()) ? "user_login.jsp" : "logout.jsp";
 	    String checkLogin = (uId == null || uId.isEmpty()) ? "user_login.jsp" : "user_reserv.jsp";
 	    String checkReserv = (uId == null || uId.isEmpty()) ? "user_login.jsp" : "user_reserv_check.jsp";
+	    String mypage = (uId == null || uId.isEmpty()) ? "user_login.jsp" : "user_myPage_table.jsp";
 	%>
 	<header>
 		<div class="title">
@@ -87,7 +87,8 @@
 		</div>
 		<ul>
 			<li><a href="<%= checkLogin %>" onclick="return checkLogin()">숙소 예약</a></li>
-			<li><a href="<%= checkReserv %>" onclick="return checkReserv()">예약내역 확인</a></li>
+			<li><a href="<%= checkReserv %>" onclick="return checkLogin()">예약내역 확인</a></li>
+			<li><a href="<%= mypage %>" onclick="return checkLogin()">마이페이지</a></li>
 			<li><a href="<%= loginLink %>"><%= loginText %></a></li>
 		</ul>
 	</header>

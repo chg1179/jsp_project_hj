@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>관리자 메인</title>
+<title>호스트 메인</title>
 <style>
 	body {
 		margin: 0;
@@ -12,9 +12,13 @@
 	}
 	
 	header {
+		position: relative;
+		top: 0;
+		left: 0;
+		width: 100%;
 		background-color: #003580;
 		box-sizing: border-box;
-		line-height: 65px;
+		line-height: 70px;
 	}
 	
 	.title {
@@ -30,11 +34,11 @@
 	h1 a {
 		text-decoration: none;
 		color: #F6F6F6;
-		margin-left: 20px;
 	}
 	
 	ul {
 		margin: 0;
+		padding: 0;
 		text-align: center;
 	}
 	
@@ -63,13 +67,13 @@
 		<header>
 			<div class="title">
 				<h1>
-					<a href="admin_main.jsp">HOSTEL</a>
+					<a href="host_menu.jsp">HOSTEL</a>
 				</h1>
 			</div>
 			<ul>
-				<li><a href="admin_user_table.jsp">고객 정보</a></li>
-				<li><a href="admin_reserv_table.jsp">고객 예약 정보</a></li>
-				<li><a href="admin_host_table.jsp">호스트 정보</a></li>
+				<li><a href="host_accm.jsp">숙소 등록</a></li>
+				<li><a href="host_reserv_check.jsp">고객 예약 정보</a></li>
+				<li><a href="host_myPage.jsp">내정보</a></li>
 				<li><a href="logout.jsp">로그아웃</a></li>
 			</ul>
 		</header>

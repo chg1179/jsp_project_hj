@@ -7,12 +7,13 @@
 <title>호스트 로그인</title>
 </head>
 <body>
-<%@ include file="main2.jsp" %>
+<%@ include file="host_menu.jsp" %>
 	<form action="host_login_check.jsp" name=loginForm>
 		<h3>호스트 로그인</h3>
 		<div><input type="text" name="hId" placeholder="아이디"></div>
 		<div><input type="password" name="pwd" placeholder="비밀번호"></div>
 		<div><input type="button" value="로그인" onclick="hostLogin()"></div>
+		<div><input type="button" value="회원가입" onclick="hostJoin()"></div>
 	</form>
 </body>
 </html>
@@ -30,6 +31,9 @@
 			return;
 		}
 		form.submit();
+	}
+	function hostJoin(){
+		location.href="host_join.jsp";
 	}
 
 </script>

@@ -20,7 +20,7 @@
 <%@ include file="admin_main.jsp" %>
 <%@ include file="../jdbc_set2.jsp" %>
 <form name="list">
-<h1>게스트 정보</h1>
+<h1>내정보 수정</h1>
 	<table>
 		<tr>
 			<th></th>

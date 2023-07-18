@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<%@ include file="main2.jsp" %>
+<%@ include file="host_menu.jsp" %>
 	<%
 		String hId = (String) session.getAttribute("hostId");
 		String hName = (String) session.getAttribute("hostName");
@@ -15,18 +15,7 @@
 		out.println(hName + "님 환영합니다.");
 		
 	%>
-	<input type="button" value="로그아웃" onclick="logout()">
-	<input type="button" value="메인페이지" onclick="hostMain()">
-	<
 	
 </body>
 </html>
-<script>
-	function logout(){
-		location.href="host_login.jsp";
-	}
-	function hostMain(){
-		location.href="host_main.jsp";
-	}
 
-</script>

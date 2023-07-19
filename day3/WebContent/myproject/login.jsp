@@ -15,10 +15,14 @@
 	/* 이름 세션 종료하기 */
  	/* session.invalidate(); */
  	
- 	if(request.isRequestedSessionIdValid()){
- 		session.invalidate();
- 	}
- 	
+ 	if (session != null && session.getAttribute("userId") != null) {
+    // 세션이 유효하면 실행할 코드
+    String userId = (String) session.getAttribute("userId");
+    out.println("세션 유효, 사용자 아이디: " + userId);
+} else {
+    // 세션이 유효하지 않으면 실행할 코드
+    out.println("세션이 유효하지 않습니다.");
+}
  
 %>
 <form action="login_check.jsp" name=userForm>

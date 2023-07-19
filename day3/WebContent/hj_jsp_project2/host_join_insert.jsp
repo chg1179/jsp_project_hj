@@ -5,6 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" href="login.css">
 </head>
 <body>
 <form action="host_login.jsp">
@@ -23,7 +24,7 @@
 		
 		try{
 			stmt = conn.createStatement();
-			String insert = "INSERT INTO HJ_TBL_HOST(H_ID, PWD, H_NAME, PHONE, EMAIL) VALUES('" + hId + "','" + pwd1 + "', '" + hName + "','" + email + "','" + phone + "')";
+			String insert = "INSERT INTO HJ_TBL_HOST(H_ID, PWD, H_NAME, PHONE, EMAIL) VALUES('" + hId + "','" + pwd1 + "', '" + hName + "','" + phone + "','" + email + "')";
 			System.out.println(insert);
 			stmt.executeUpdate(insert);
 			out.println(hName + "님 가입을 축하합니다!!");

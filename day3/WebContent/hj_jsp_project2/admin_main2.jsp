@@ -64,7 +64,17 @@
         background-color: #003580; /* 선택했을 때의 색상 */
     }
     
-	
+   
+   .item {
+   		margin: 50px auto;
+   		width: 100px;
+		height: 100px;
+		background-image: url(관리자.png);
+		background-size: 100px 100px;
+		background-repeat: no-repeat;
+   }
+	.text {
+		text-align: center;
 </style>
 </head>
 <body>
@@ -91,6 +101,8 @@
 				<li><a href="logout.jsp">로그아웃</a></li>
 			</ul>
 		</header>
+		<div class="item"></div>
+		<div class="text">관리자 페이지입니다.</div>
 	</div>
 </body>
 </html>

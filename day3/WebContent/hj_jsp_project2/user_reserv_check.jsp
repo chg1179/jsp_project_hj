@@ -11,7 +11,6 @@ table {
 	border-collapse: collapse;
 	text-align: center;
 }
-
 th, td {
 	border: 1px solid black;
 	padding: 5px 10px;

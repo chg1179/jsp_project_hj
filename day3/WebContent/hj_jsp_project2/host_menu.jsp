@@ -9,6 +9,7 @@
 	body {
 		margin: 0;
 		padding: 0;
+		font-family: A타이틀고딕2;
 	}
 	
 	header {
@@ -73,10 +74,11 @@
 	    String checkReserv = (hostId == null || hostId.isEmpty()) ? "host_login.jsp" : "host_reserv_check.jsp";
 	    String mypage = (hostId == null || hostId.isEmpty()) ? "host_login.jsp" : "host_myPage.jsp";
 	%>
+	
 	<header>
 		<div class="title">
 			<h1>
-				<a href="main.jsp" title="Hosting">HOSTEL</a>
+				<a href="host_main.jsp" title="Hosting">HOSTEL</a>
 			</h1>
 		</div>
 		<ul>

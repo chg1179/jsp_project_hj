@@ -9,7 +9,7 @@
 </head>
 <body>
 <%@ include file="host_menu.jsp" %>
-<form action="host_login_check.jsp" name=loginForm>
+<form action="host_login_check.jsp" name=loginForm method="post">
 	<div id="container">
 		<h3>호스트 로그인</h3>
 		<div><input type="text" name="hId" placeholder="아이디"></div>

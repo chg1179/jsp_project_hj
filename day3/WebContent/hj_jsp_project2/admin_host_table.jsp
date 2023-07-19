@@ -54,7 +54,6 @@
 						= rs.getString("BANYN").equals("Y") ? "정지" : "";
 					String btnYn 
 						= rs.getString("BANYN").equals("Y") ? "해제" : "정지";
-					
 		%>
 			<tr>
 				<td>

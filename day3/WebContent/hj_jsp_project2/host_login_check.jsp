@@ -5,6 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" href="login.css">
 </head>
 <body>
 <form name="check">
@@ -51,8 +52,11 @@
 					stmt.executeUpdate(update);
 					response.sendRedirect("user_login_find.jsp");
 				}
-			}
+			} 
 		}
+		out.println("없는 회원입니다.회원가입 후 다시 시도해주세요.");
+		
+		
 	} catch (SQLException e) {
 		out.println(e.getMessage());
 	}

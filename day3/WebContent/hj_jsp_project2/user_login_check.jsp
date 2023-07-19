@@ -5,6 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" href="login.css">
 </head>
 <body>
 	<form name="check">
@@ -43,7 +44,7 @@
 				
 				// 관리자
 				if(stat.equals("A")){
-					response.sendRedirect("admin_main.jsp");
+					response.sendRedirect("admin_main2.jsp");
 				} else { // 일반 사용자
 					response.sendRedirect("user_main.jsp");
 				}

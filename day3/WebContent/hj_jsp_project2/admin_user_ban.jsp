@@ -1,14 +1,16 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" href="login.css">
 </head>
 <body>
-   <%@ include file="../jdbc_set2.jsp" %>
-<%
+<div id="container">
+	<%@ include file="../jdbc_set2.jsp"%>
+	<%
       request.setCharacterEncoding("UTF-8");
       String uId = request.getParameter("uId");
       String kind = request.getParameter("kind");
@@ -29,7 +31,8 @@
          System.out.println(kind);
       } 
    %>
-   <input type="button" onclick="back()" value="되돌아가기">
+	<input type="button" onclick="back()" value="되돌아가기">
+</div>
 </body>
 </html>
 <script>

@@ -1,10 +1,10 @@
 @charset "UTF-8";
 
     body {
-        font-family: Arial, sans-serif;
+        font-family: A타이틀고딕2;
     }
     #container {
-        width: 880px;
+        width: 918px;
         margin: 40px auto;
         padding: 20px;
         border: 1px solid #ccc;

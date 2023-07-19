@@ -54,8 +54,9 @@ th, td {
 					String email = rs.getString("EMAIL");
 					String phone = rs.getString("PHONE");
 			%>
+			<input type="text" name="userId" value="<%= userId %>" hidden=>
 			<tr>
-				<td><input type="text" name="userId" value="<%= useId %>"></td>
+				<td><%= useId %></td>
 				<td><input type="text" name="pwd" value="<%= pwd %>"></td>
 				<td><input type="text" name="userName" value="<%= userName %>"></td>
 				<td><input type="email" name="email" value="<%= email %>"></td>
@@ -79,7 +80,7 @@ th, td {
 <script>
 	function infoUpdate(){
 		var form = document.myInfo;
-		var uId= form.useId.value;
+		var uId= form.userId.value;
 		var pwd= form.pwd.value;
 		var uName = form.userName.value;
 		var email = form.email.value;

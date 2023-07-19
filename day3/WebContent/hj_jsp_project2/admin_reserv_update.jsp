@@ -5,10 +5,12 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" href="login.css">
 </head>
 <body>
 <%@ include file="../jdbc_set2.jsp"%>
 <form name="updateForm" action="admin_reserv_update_sql.jsp" method="post">
+<div id="container">
 		<%
 			request.setCharacterEncoding("UTF-8");
 			String rNo = request.getParameter("rNo");
@@ -40,6 +42,7 @@
 			}
 		%>
 		<div><input type="submit" value="수정"></div>
+</div>
 </form>
 </body>
 </html>

@@ -9,6 +9,7 @@
 	body {
 		margin: 0;
 		padding: 0;
+		font-family: A타이틀고딕2;
 	}
 	
 	header {
@@ -64,17 +65,18 @@
 	
 	.item-bg {
 		width: 100%;
-		height: 937px;
+		height: 908px;
+ 		background-size: cover;
 		background-image: url(to-travel-1677347_1920.jpg);
-		background-position: center;
+	 	background-position: center;
 	}
 
 	.item-overlay {
-		position: fixed;
+		position: absolute;
 		top: 140px;
 		left: 0;
 		width: 100%;
-		height: 107%;
+		height: 908px;
 		background-color: rgba(0, 0, 0, 0.5);
 	}
 </style>
@@ -96,7 +98,7 @@
 		</div>
 		<ul>
 			<li><a href="<%= checkLogin %>" onclick="return checkLogin(<%= uId %>)">숙소 예약</a></li>
-			<li><a href="<%= checkReserv %>" onclick="return checkReserv(<%= uId %>)">예약내역 확인</a></li>
+			<li><a href="<%= checkReserv %>" onclick="return checkLogin(<%= uId %>)">예약내역 확인</a></li>
 			<li><a href="<%= mypage %>" onclick="return checkLogin(<%= uId %>)">마이페이지</a></li>
 			<li><a href="<%= loginLink %>"><%= loginText %></a></li>
 		</ul>
@@ -117,11 +119,4 @@
 		return true; // 기본 동작 실행 (링크 이동 허용)
 	}
 
-	function checkReserv(uId) {
-		if (uId == null || uId === "") {
-			alert("로그인 먼저 해주세요.");
-			return false; // 기본 동작 중단 (링크 이동 방지)
-		}
-		return true; // 기본 동작 실행 (링크 이동 허용)
-	}
 </script>

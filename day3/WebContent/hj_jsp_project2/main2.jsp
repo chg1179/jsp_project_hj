@@ -9,6 +9,7 @@
 	body {
 		margin: 0;
 		padding: 0;
+		font-family: A타이틀고딕2;
 	}
 	
 	header {

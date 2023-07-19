@@ -13,14 +13,13 @@
 <%
 	Statement stmt = null;
 	ResultSet rs = null;
+	String hId = (String)session.getAttribute("hostId");
 	
 	try{
 		stmt=conn.createStatement();
-		String select = "SELECT * FROM HJ_TBL_ACCM";	
+		String select = "SELECT * FROM HJ_TBL_HOST H INNER JOIN HJ_TBL_ACCM A ON H.H_ID = A.H_ID;";	
 		rs = stmt.executeQuery(select);
-		if(rs.next()){
-			session.setAttribute("hId",rs.getString("H_ID"));
-		}
+		
 	} catch(SQLException e){
 		out.println(e.getMessage());
 	}
@@ -28,7 +27,8 @@
 
 <form action="host_accm_insert.jsp" name="accmInsert">
 <div id="container">
-	<h3>숙소등록</h3>
+	<h3>숙소등록</h3>	
+	<div><input type="text" name="hId" value="<%= hId %>" hidden></div>
 	<div><input type="text" name="aName" placeholder="숙소 이름"></div>
 	<div><input type="text" name="aAddr" placeholder="숙소 주소"></div>
 	<div><input type="text" name="aPerson" placeholder="숙박 가능 인원"></div>
@@ -39,6 +39,7 @@
 </html>
 <script>
 	function submit(){
+		var hId = document.hId.value;
 		var form = document.accmInsert;
 		if(form.aName.value == "" || form.aName.value == undefined){
 			alert("숙소 이름을 입력해주세요.");

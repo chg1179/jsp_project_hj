@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-
+<link rel="stylesheet" href="login.css">
 </head>
 <body>
 <body>
@@ -25,13 +25,17 @@
 			rs=stmt.executeQuery(select);
 			stmt.executeUpdate(update);
 			out.println("숙소 등록이 완료되었습니다.");
+			System.out.println(hId);
 			
 		} catch (SQLException e){
 			out.println(e.getMessage());
 		}
 	%>
+	<input type="button" value="숙소 등록 정보 확인" onclick="back()">
 </body>
 </html>
 <script>
-	alert("");
+	function back(){
+		location.href="host_myPage.jsp";
+	}
 </script>

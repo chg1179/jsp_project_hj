@@ -62,7 +62,7 @@ th, td {
 					String checkOut = rs.getString("CHECKOUT");
 			%>
 			<tr>
-				<td><input type="radio" name="user" value="<%=rNo%>"></td>
+				<td><input type="radio" name="user" value="<%=rNo%>" checked></td>
 				<td>R<%=rNo%></td>
 				<td><%=userId%></td>
 				<td><%=aName%></td>

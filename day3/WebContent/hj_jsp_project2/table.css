@@ -21,7 +21,8 @@
     #container input[type="text"],
     #container input[type="password"],
     #container input[type="email"],
-    #container input[type="button"] {
+    #container input[type="button"],
+    #container select {
         width: 100%;
         padding: 10px;
         box-sizing: border-box;
@@ -30,7 +31,7 @@
         font-size: 14px;
     }
 
-    #container input[type="button"] {
+    #container input[type="button"]{
 		margin-top: 10px;
         height: 40px;
         background-color: #fff;

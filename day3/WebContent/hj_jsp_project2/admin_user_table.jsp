@@ -55,7 +55,7 @@
 		%>
 			<tr>
 				<td>
-					<input type="radio" name="user" value="<%=uId%>">
+					<input type="radio" name="user" value="<%=uId%>" checked>
 				</td>
 				<td><a href=""><%=uId%></a></td>
 				<td><%=uName%></td>
@@ -105,12 +105,12 @@
 	}
 	//로그인 시도 횟수
 	function cntChange(uId){
-		window.open("admin_user_cnt.jsp?uId="+uId, "popup","width=500, height=500");
+		window.open("admin_user_cnt.jsp?uId="+uId, "popup","width=500, height=600");
 		
 	}// 유저 정보 수정(관리자)
 	function userUpdate(){
 		var uId = document.list.user.value;
-		window.open("admin_user_update.jsp?uId="+ uId, "update","width=500, height=500");
+		window.open("admin_user_update.jsp?uId="+ uId, "update","width=500, height=600");
 	}
 	function getReturn(){
 		location.reload();

@@ -57,7 +57,7 @@
 		%>
 			<tr>
 				<td>
-					<input type="radio" name="user" value="<%=hId%>">
+					<input type="radio" name="user" value="<%=hId%>" checked>
 				</td>
 				<td><%=hId%></td>
 				<td><%=hName%></td>
@@ -105,16 +105,16 @@
 			kind = "N"
 		}
 		window.open("admin_host_ban.jsp?hId="+hId+"&kind="+kind,"popup"
-				,"width=500, height=500");
+				,"width=500, height=600");
 	}
 	//로그인 시도 횟수
 	function cntChange(hId){
-		window.open("admin_host_cnt.jsp?hId="+hId, "popup","width=500, height=500");
+		window.open("admin_host_cnt.jsp?hId="+hId, "popup","width=500, height=600");
 		
 	}// 호스트 정보 수정(관리자)
 	function hostUpdate(){
 		var hId = document.list.user.value;
-		window.open("admin_host_update.jsp?hId="+hId, "update","width=500, height=500");
+		window.open("admin_host_update.jsp?hId="+hId, "update","width=500, height=600");
 	}
 	function getReturn(){
 		location.reload();

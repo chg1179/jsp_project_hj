@@ -7,6 +7,16 @@
 <title>숙소 예약</title>
 <link rel="stylesheet" href="login.css">
 <style>
+#container select {
+	width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-size: 14px;
+    margin: 5px;
+} 
+
 </style>
 </head>
 <body>

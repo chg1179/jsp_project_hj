@@ -10,6 +10,8 @@
 		margin: 0;
 		padding: 0;
 		font-family: A타이틀고딕2;
+		height: 100hv;
+		overflow:hidden;
 	}
 	
 	header {
@@ -57,27 +59,29 @@
 	}
 	
     ul li a:hover {
-        background-color: #005AAD; /* 마우스를 가져다 댔을 때의 색상 */
+        background-color: #005AAD; 
     }
     ul li a:active {
-        background-color: #003580; /* 선택했을 때의 색상 */
+        background-color: #003580; 
     }
 	
 	.item-bg {
 		width: 100%;
-		height: 908px;
+		height: 100vh;
  		background-size: cover;
 		background-image: url(to-travel-1677347_1920.jpg);
 	 	background-position: center;
+	 	position: relative;
 	}
 
 	.item-overlay {
-		position: absolute;
-		top: 140px;
+		position: absolute; 
+		top: 0;
 		left: 0;
 		width: 100%;
-		height: 908px;
+		height: 100%; 
 		background-color: rgba(0, 0, 0, 0.5);
+		z-index: 1;
 	}
 </style>
 </head>

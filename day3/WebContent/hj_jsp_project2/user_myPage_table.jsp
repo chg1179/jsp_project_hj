@@ -71,7 +71,6 @@ th, td {
 		%>
 		</table>
 		<input type="button" onclick="infoUpdate()" value="수정"/>
-		<input type="button" onclick="goMain()" value="메인페이지"/>
 	</div>
 </form>
 	
@@ -87,7 +86,5 @@ th, td {
 		var phone = form.phone.value;
 		form.submit();
 	}
-	function goMain(){
-		location.href="main.jsp";
-	}
+
 </script>

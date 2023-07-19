@@ -10,7 +10,6 @@
 	#container .text-name {
 		text-align: center;
 	}
-
 </style>
 </head>
 <body>

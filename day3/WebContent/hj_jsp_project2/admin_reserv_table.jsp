@@ -54,7 +54,7 @@
 		%>
 			<tr>
 				<td>
-					<input type="radio" name="rNo" value="<%=rNo%>">
+					<input type="radio" name="rNo" value="<%=rNo%>" checked>
 				</td>
 				<td>R<%=rNo%></td>
 				<td><%=uId%></td>
@@ -92,7 +92,7 @@
 	function reservUpdate(){
 		var form = document.list;
 		var rNo = form.rNo.value;
-		window.open("admin_reserv_update.jsp?rNo="+ rNo, "update","width=500, height=500");
+		window.open("admin_reserv_update.jsp?rNo="+ rNo, "update","width=500, height=600");
 	}
 	function getReturn(){
 		location.reload();

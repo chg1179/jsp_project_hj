@@ -6,6 +6,17 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link rel="stylesheet" href="login.css">
+<style>
+ #container select {
+	width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-size: 14px;
+    margin: 5px;
+} 
+</style>
 </head>
 <body>
 <%@ include file="host_menu.jsp" %>
@@ -29,32 +40,18 @@
 <div id="container">
 	<h3>숙소등록</h3>	
 	<div><input type="text" name="hId" value="<%= hId %>" hidden></div>
-	<div><input type="text" name="aName" placeholder="숙소 이름"></div>
-	<div><input type="text" name="aAddr" placeholder="숙소 주소"></div>
-	<div><input type="text" name="aPerson" placeholder="숙박 가능 인원"></div>
-	<div><input type="submit" value="등록" onclick="submit()"></div>
+	<div><input type="text" name="aName" placeholder="숙소 이름" required></div>
+	<div><input type="text" name="aAddr" placeholder="숙소 주소" required></div>
+	<div>
+		<select name = aPerson required>
+			<option value="">선택</option>
+			<% for(int i=1; i<=6; i++){ %>
+				<option value="<%= i %>"><%= i %>명</option>
+			<% } %>		
+		</select>
+	</div>
+	<div><input type="submit" value="등록"></div>
 </div>
 </form>
 </body>
 </html>
-<script>
-	function submit(){
-		var hId = document.hId.value;
-		var form = document.accmInsert;
-		if(form.aName.value == "" || form.aName.value == undefined){
-			alert("숙소 이름을 입력해주세요.");
-			form.aName.focus();
-			return;
-		}
-		if(form.aAddr.value == "" || form.aAddr.value == undefined){
-			alert("숙소 주소를 입력해주세요.");
-			form.aAddr.focus();
-			return;
-		}
-		if(form.aPerson.value == "" || form.aPerson.value == undefined){
-			alert("숙박 가능 인원을 입력해주세요.");
-			form.aPerson.focus();
-			return;
-		}
-	}
-</script>
